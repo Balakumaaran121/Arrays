@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main{
+    public  static  void main(String[] args)
+    {
+        Scanner scan=new Scanner(System.in);
+        int n= scan.nextInt();
+        int m= scan.nextInt();
+        int[] array1=new int[n+m];
+        for(int i=0;i<n;i++)
+        {
+            array1[i]=scan.nextInt();
+        }
+        for(int i=n;i<n+m;i++)
+        {
+            array1[i]=scan.nextInt();
+        }
+        for(int i=0;i<n+m;i++)
+        {
+         for(int j=i+1;j<n+m;j++)
+         {
+             if(array1[i]>array1[j])
+             {
+                 int temp=array1[i];
+                 array1[i]=array1[j];
+                 array1[j]=temp;
+             }
+         }
+        }
+        for(int i=0;i<n+m;i++)
+        {
+            System.out.print(array1[i]+" ");
+        }
+    }
+}
