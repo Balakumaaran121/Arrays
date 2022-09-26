@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args)
+    {
+        Scanner scan=new Scanner(System.in);
+        int n=scan.nextInt();
+        int[] arrays=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            arrays[i]=scan.nextInt();
+        }
+        int count=0,max=0;
+        for(int i=0;i<n;i++)
+        {
+            if(arrays[i]==1)
+            {   count=1;
+                for(int j=i+1;j<n;j++)
+                {
+                    if(arrays[j]==1)
+                    {
+                        count++;
+                    }
+                    else {
+                        break;
+                    }
+                }
+                if(count>max)
+                {
+                    max=count;
+                }
+            }
+        }
+        System.out.println(max);
+    }
+
+}
