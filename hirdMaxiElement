@@ -1,0 +1,47 @@
+import java.util.Scanner;
+public class thirdMaxiElement {
+    public static  void main(String[] args)
+    {
+        Scanner scan=new Scanner(System.in);
+
+        System.out.println("Enter the size of an array: ");
+        int size=scan.nextInt();
+        System.out.println("Enter the elements in an array");
+        int[] array=new int[size];
+        for(int index=0;index<size;index++)
+        {
+            array[index]=scan.nextInt();
+        }
+        int firstmax=-1,secondmax=-1,thirdmax=-1;
+        for(int index=0;index<size;index++)
+        {
+            if(firstmax<=array[index])
+            {
+                if(firstmax!=array[index]) {
+                    thirdmax = secondmax;
+                    secondmax = firstmax;
+                    firstmax = array[index];
+                }
+            }
+            else if(secondmax<=array[index])
+            {
+                if(secondmax!=array[index]) {
+                    thirdmax = secondmax;
+                    secondmax = array[index];
+                }
+            }
+            else
+            {
+                thirdmax=array[index];
+            }
+        }
+        if(thirdmax==-1)
+        {
+            System.out.println("First Maximum element:"+firstmax);
+        }
+        else
+        {
+            System.out.println("Third Maximum Element:"+thirdmax);
+        }
+    }
+}
