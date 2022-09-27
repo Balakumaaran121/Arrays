@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class mountainArray {
+    public static void main(String[] args)
+    {
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter length of an array:");
+        int n=scan.nextInt();
+        int[] arr=new int[n];
+        boolean result=false;
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=scan.nextInt();
+        }
+        int index=0;
+        while(index < n - 1 && arr[index] < arr[index + 1])
+        {
+             index++;
+        }
+        int reverseindex=n-1;
+        while(reverseindex>0&&arr[reverseindex]<arr[reverseindex-1])
+        {
+            reverseindex--;
+        }
+        if(index==reverseindex)
+        {
+            result=true;
+        }
+        System.out.println("Result: "+result);
+    }
+}
