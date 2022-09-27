@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class iEqualsTo2Ofj {
+    public  static void main(String[] args)
+    {
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter length of an array:");
+        int n=scan.nextInt();
+        boolean result=false;
+        int[] arr=new int[n];
+        System.out.println("Enter elements of an array:");
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=scan.nextInt();
+        }
+       for(int i=0;i<n;i++)
+       {
+           for(int j=n-1;j>=0;j--)
+           {
+               if(i!=j)
+               {
+                   if (arr[i] == (2 * arr[j])) {
+                       result = true;
+                       break;
+                   }
+               }
+           }
+       }
+        System.out.println("result:"+result);
+    }
+}
