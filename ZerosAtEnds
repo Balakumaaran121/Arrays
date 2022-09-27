@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class ZerosAtEnds {
+
+    public static void main(String[] args)
+    {
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter the size of an array:");
+        int size=scan.nextInt();
+        int[] array=new int[size];
+        System.out.println("Enter the elements:");
+        for(int i=0;i<size;i++)
+        {
+            array[i]=scan.nextInt();
+        }
+        int index=0,reversepointer=size-1;
+        while(index<=reversepointer)
+        {
+            if(array[index]==0)
+            {
+                array[index]=array[reversepointer];
+                array[reversepointer]=0;
+                reversepointer--;
+            }
+            else
+            {
+                index++;
+            }
+        }
+        for(index=0;index<size;index++)
+        {
+            System.out.print(array[index]+" ");
+        }
+    }
+}
